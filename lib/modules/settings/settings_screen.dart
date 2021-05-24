@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:mysocially/modules/edit_profile/edit_profile_screen.dart';
+import 'package:mysocially/shared/components/components.dart';
 import 'package:mysocially/shared/cubit/cubit.dart';
 import 'package:mysocially/shared/cubit/states.dart';
 import 'package:mysocially/styles/icon_broken.dart';
@@ -173,7 +175,9 @@ class SettingsScreen extends StatelessWidget {
                     width: 10.0,
                   ),
                   OutlinedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      navigateTo(context, EditProfileScreen(),);
+                    },
                     child: Icon(
                       IconBroken.Edit,
                       size: 20.0,

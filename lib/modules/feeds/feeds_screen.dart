@@ -6,7 +6,6 @@ import 'package:mysocially/styles/colors.dart';
 import 'package:mysocially/styles/icon_broken.dart';
 
 class FeedsScreen extends StatelessWidget {
-
   const FeedsScreen({Key key}) : super(key: key);
 
   @override
@@ -53,7 +52,9 @@ class FeedsScreen extends StatelessWidget {
                 shrinkWrap: true,
                 physics: NeverScrollableScrollPhysics(),
                 itemBuilder: (context, index) => buildPostItem(context),
-                separatorBuilder: (context, index) => SizedBox(height: 10,),
+                separatorBuilder: (context, index) => SizedBox(
+                  height: 10,
+                ),
                 itemCount: 10,
               ),
               // SizedBox(
@@ -83,8 +84,8 @@ class FeedsScreen extends StatelessWidget {
                       // radius: responsive.height * 0.025,
                       radius: 25.0,
                       backgroundImage: NetworkImage(
-                        // 'https://avatars.githubusercontent.com/u/51885062?v=4',
-                        '${AppCubit.get(context).userModel.image}',
+                        'https://avatars.githubusercontent.com/u/51885062?v=4',
+                        // '${AppCubit.get(context).userModel.image}',
                       ),
                     ),
                     SizedBox(
@@ -97,8 +98,8 @@ class FeedsScreen extends StatelessWidget {
                           Row(
                             children: [
                               Text(
-                                // 'Mahmoud Al-Haroon',
-                                '${AppCubit.get(context).userModel.name}',
+                                'Mahmoud Al-Haroon',
+                                // '${AppCubit.get(context).userModel.name}',
                                 style: TextStyle(
                                   height: 1.4,
                                 ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:mysocially/styles/icon_broken.dart';
 
 Widget defaultButton({
   double width = double.infinity,
@@ -27,6 +28,25 @@ Widget defaultButton({
         ),
         color: background,
       ),
+    );
+
+Widget defaultAppBar({
+  @required BuildContext context,
+  String title,
+  List<Widget> actions,
+}) =>
+    AppBar(
+      leading: IconButton(
+        onPressed: () {
+          Navigator.pop(context);
+        },
+        icon: Icon(IconBroken.Arrow___Left_2),
+      ),
+      titleSpacing: 5.0,
+      title: Text(
+        title,
+      ),
+      actions: actions,
     );
 
 Widget defaultTextButton({
@@ -70,33 +90,33 @@ Widget defaultFormField({
         ),
         suffixIcon: suffix != null
             ? IconButton(
-          onPressed: suffixPressed,
-          icon: Icon(
-            suffix,
-          ),
-        )
+                onPressed: suffixPressed,
+                icon: Icon(
+                  suffix,
+                ),
+              )
             : null,
         border: OutlineInputBorder(),
       ),
     );
 
 void navigateTo(context, widget) => Navigator.push(
-  context,
-  MaterialPageRoute(
-    builder: (context) => widget,
-  ),
-);
+      context,
+      MaterialPageRoute(
+        builder: (context) => widget,
+      ),
+    );
 
 void navigateAndFinish(
-    context,
-    widget,
-    ) =>
+  context,
+  widget,
+) =>
     Navigator.pushAndRemoveUntil(
         context,
         MaterialPageRoute(
           builder: (context) => widget,
         ),
-            (Route<dynamic> route) => false);
+        (Route<dynamic> route) => false);
 
 String validateEmail(String value) {
   Pattern pattern =
@@ -147,12 +167,12 @@ Color chooseToastColor(ToastStates state) {
 }
 
 Widget myDivider() => Padding(
-  padding: const EdgeInsetsDirectional.only(
-    start: 20.0,
-  ),
-  child: Container(
-    width: double.infinity,
-    height: 1.0,
-    color: Colors.grey[300],
-  ),
-);
+      padding: const EdgeInsetsDirectional.only(
+        start: 20.0,
+      ),
+      child: Container(
+        width: double.infinity,
+        height: 1.0,
+        color: Colors.grey[300],
+      ),
+    );
